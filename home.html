@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Graphy</h1>
+            <h3>A Best Tool For Data Scientists</h3>
+            <p>Hey there! Welcome to our very intelligent tool. Here you can generate a graph chart of your data.</p>
+            <p>Just Get Started</p>
+
+            <section>
+                <div class="image-container">
+                    <img src="https://th.bing.com/th/id/OIP.keTJ5FYWTb1pn5ND621LXwHaFj?rs=1&pid=ImgDetMain" alt="Graph Image 1">
+                    <img src="https://th.bing.com/th/id/OIP.WWNQwaBsyUe5AgXNf2yhfAHaGL?w=500&h=417&rs=1&pid=ImgDetMain" alt="Graph Image 2">
+                    <img src="https://inside-machinelearning.com/wp-content/uploads/2021/10/plotly_express_dark.png" alt="Graph Image 3">
+                </div>
+            </section>
+
+            <a href="{% url 'graph' %}">
+                <button type="submit" class="start-button">Start</button>
+            </a>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Graphy. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'home.js' %}"></script>
+</body>
+</html>

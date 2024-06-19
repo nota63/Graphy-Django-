@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'graph.css' %}">
+</head>
+<body>
+     <h1>This one is graph </h1>
+     <p>Warning: create a static folder before start and save your data analysed image anywhere then do another operation</p>
+     <p>because we have set some limits for security purposes</p>
+     <br>
+
+     <section>
+         <div class="graph">
+             <form method="post">
+                 {% csrf_token %}
+                 <label>X-Axis</label>
+                 <input type="text" name="x" placeholder="X with included Commas">
+                 <label>Y-Axis</label>
+                 <input type="text" name="y" placeholder="Y with included commas">
+                 <button type="submit">Analyse Data</button>
+             </form>
+         </div>
+     </section>
+     <br>
+
+     <section>
+         <div class="generated">
+             <label>Results</label>
+             <!-- Display the generated chart image -->
+             <img src="{{ img_path }}" alt="Generated Chart">
+         </div>
+     </section>
+
+     <!-- Spinner -->
+<div id="spinner">
+    <p>Generating graph of your data...</p>
+    <img src="spinner.gif" alt="Loading">
+</div>
+
+<!-- Overlay and Popup -->
+<div id="overlay"></div>
+<div id="popup">
+    <p>Graph generated successfully!</p>
+    <button id="popup-button">OK</button>
+</div>
+
+
+       <script src="{% static 'graph.js' %}"></script>
+</body>
+</html>
